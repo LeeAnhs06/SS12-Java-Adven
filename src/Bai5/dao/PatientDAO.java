@@ -58,7 +58,7 @@ public class PatientDAO {
              PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setString(1, p.getCode());
-            ps.setString(2, p.getFullName()); // ✅ tên có dấu nháy an toàn
+            ps.setString(2, p.getFullName()); 
             ps.setInt(3, p.getAge());
             ps.setString(4, p.getDepartment());
             ps.setString(5, p.getDiagnosis());
