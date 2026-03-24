@@ -11,8 +11,8 @@ public class GetSurgeryFee {
         String sql = "{ call GET_SURGERY_FEE(?, ?) }";
 
         try (CallableStatement cstmt = conn.prepareCall(sql)) {
-            cstmt.setInt(1, surgeryId);                 // IN
-            cstmt.registerOutParameter(2, Types.DECIMAL); // OUT
+            cstmt.setInt(1, surgeryId);                 
+            cstmt.registerOutParameter(2, Types.DECIMAL); 
 
             cstmt.execute();
 
