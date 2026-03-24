@@ -15,8 +15,8 @@ public class FeeService {
         try (Connection conn = DBContext.getConnection();
              CallableStatement cs = conn.prepareCall(sql)) {
 
-            cs.setInt(1, days); // IN
-            cs.registerOutParameter(2, Types.DECIMAL); // OUT
+            cs.setInt(1, days); 
+            cs.registerOutParameter(2, Types.DECIMAL); 
 
             cs.execute();
             return cs.getBigDecimal(2);
