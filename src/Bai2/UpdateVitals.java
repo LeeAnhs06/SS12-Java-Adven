@@ -13,7 +13,7 @@ public class UpdateVitals {
             ps.setInt(2, heartRate);
             ps.setInt(3, patientId);
 
-            return ps.executeUpdate();   // trả về số dòng được cập nhật
+            return ps.executeUpdate();  
         } catch (Exception e) {
             e.printStackTrace();
             return 0;
