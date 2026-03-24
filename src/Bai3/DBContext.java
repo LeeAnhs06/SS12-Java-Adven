@@ -12,7 +12,6 @@ public class DBContext {
     private static final String DB_USER = "root";
     private static final String DB_PASSWORD = "Leanh123";
 
-    // 👉 Hàm tạo database nếu chưa có
     public static void initDatabase() {
         try (Connection conn = DriverManager.getConnection(HOST, DB_USER, DB_PASSWORD);
              Statement stmt = conn.createStatement()) {
@@ -20,14 +19,13 @@ public class DBContext {
             String sql = "CREATE DATABASE IF NOT EXISTS " + DB_NAME;
             stmt.executeUpdate(sql);
 
-            System.out.println("✅ Database checked/created!");
+            System.out.println("Database create");
 
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    // 👉 Kết nối vào database
     public static Connection getConnection() throws SQLException {
         String url = HOST + DB_NAME;
         return DriverManager.getConnection(url, DB_USER, DB_PASSWORD);
